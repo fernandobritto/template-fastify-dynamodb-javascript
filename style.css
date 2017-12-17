@@ -10,3 +10,13 @@
 	Text Domain: Semantic
 	Tags: programação, wordpress, templates
 */
+
+.footer{
+    height: 60px;
+    background-color: black;
+    color: white;
+}
+
+.footer .container {
+    padding-top: 20px;
+}

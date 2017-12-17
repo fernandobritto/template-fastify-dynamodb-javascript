@@ -1,8 +1,8 @@
-<?php get_header(); ?>
-<?php get_header('custom'); ?>
+<?php get_header();?>
+
 
 <div class="container">
-    <h1>Post recentes</h1>
+    <h1>Resultados de posts por <?php echo get_search_query();?></h1>
     <div class="row">
         <div class="col-md-9">
             <?php
@@ -27,10 +27,9 @@
         <div class="col-md-3">
             <?php get_sidebar() ?>
         </div>
-        <!--<div class="col-md-3">
-            <?php //get_sidebar('personalizado') ?>
-        </div>-->
+        
     </div>
 </div>
+
 
 <?php get_footer(); ?>
