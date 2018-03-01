@@ -1,2 +1,2 @@
-# Semantic WordPress Theme
+# Semantic Theme
 
