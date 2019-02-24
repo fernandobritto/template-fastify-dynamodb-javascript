@@ -1,20 +1,19 @@
-import React from 'react';
+import React from 'react'
 
 const Site = props => {
 	return(
 		<div>
-
-<nav className='navbar navbar-default navbar-fixed-top'>
-  <div className='container'>
-    <div className='navbar-header'>
-      <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
-        <span className='icon-bar'></span>
-        <span className='icon-bar'></span>
-        <span className='icon-bar'></span>                        
-      </button>
-      <a className='navbar-brand' href='#myPage'>Logo</a>
-    </div>
-    <div className='collapse navbar-collapse' id='myNavbar'>
+      <nav className='navbar navbar-default navbar-fixed-top'>
+      <div className='container'>
+        <div className='navbar-header'>
+          <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+            <span className='icon-bar'></span>
+            <span className='icon-bar'></span>
+            <span className='icon-bar'></span>                        
+          </button>
+          <a className='navbar-brand' href='#myPage'>Logo</a>
+        </div>
+      <div className='collapse navbar-collapse' id='myNavbar'>
       <ul className='nav navbar-nav navbar-right'>
         <li><a href='#about'>ABOUT</a></li>
         <li><a href='#services'>SERVICES</a></li>
@@ -22,51 +21,53 @@ const Site = props => {
         <li><a href='#pricing'>PRICING</a></li>
         <li><a href='#contact'>CONTACT</a></li>
       </ul>
-    </div>
-  </div>
-</nav>
-
-<div className='jumbotron text-center'>
-  <h1>Company</h1> 
-  <p>We specialize in blablabla</p> 
-  <form>
-    <div className='input-group'>
-      <input type='email' className='form-control' size='50' placeholder='Email Address' required />
-      <div className='input-group-btn'>
-        <button type='button' className='btn btn-danger'>Subscribe</button>
       </div>
     </div>
-  </form>
-</div>
+    </nav>
 
-/* Container (About Section) */
-<div id='about' className='container-fluid'>
-  <div className='row'>
-    <div className='col-sm-8'>
-      <h2>About Company Page</h2><br />
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br />
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br/><button className='btn btn-default btn-lg'>Get in Touch</button>
-    </div>
-    <div className='col-sm-4'>
-      <span className='glyphicon glyphicon-signal logo'></span>
-    </div>
-  </div>
-</div>
 
-<div className='container-fluid bg-grey'>
-  <div className='row'>
-    <div className='col-sm-4'>
-      <span className='glyphicon glyphicon-globe logo slideanim'></span>
+        <div className='jumbotron text-center'>
+          <h1>Company</h1> 
+          <p>We specialize in blablabla</p> 
+          <form>
+            <div className='input-group'>
+              <input type='email' className='form-control' size='50' placeholder='Email Address' required />
+              <div className='input-group-btn'>
+              <button type='button' className='btn btn-danger'>Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+         /* Container (About Section) */
+    <div id='about' className='container-fluid'>
+        <div className='row'>
+          <div className='col-sm-8'>
+            <h2>About Company Page</h2><br />
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <br/><button className='btn btn-default btn-lg'>Get in Touch</button>
+          </div>
+          <div className='col-sm-4'>
+            <span className='glyphicon glyphicon-signal logo'></span>
+          </div>
+        </div>
+      </div>
+      
+      <div className='container-fluid bg-grey'>
+        <div className='row'>
+          <div className='col-sm-4'>
+            <span className='glyphicon glyphicon-globe logo slideanim'></span>
+          </div>
+          <div className='col-sm-8'>
+            <h2>Our Values</h2><br/>
+            <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br/>
+            <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
     </div>
-    <div className='col-sm-8'>
-      <h2>Our Values</h2><br/>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br/>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
 
 /* Container (Services Section) */
 <div id='services' className='container-fluid text-center'>
@@ -110,7 +111,7 @@ const Site = props => {
   </div>
 </div>
 
-/* Container (Portfolio Section) */
+  /* Container (Portfolio Section) */
 <div id='portfolio' className='container-fluid text-center bg-grey'>
   <h2>Portfolio</h2><br/>
   <h4>What we have created</h4>
@@ -171,6 +172,7 @@ const Site = props => {
     </a>
   </div>
 </div>
+
 
 /* Container (Pricing Section) */
 <div id='pricing' className='container-fluid'>
@@ -267,9 +269,8 @@ const Site = props => {
     </div>
   </div>
 </div>
-
 /* Image of location/map */
-<img src='/w3images/map.jpg' className='w3-image w3-greyscale-min' style='width:100%' />
+<img src='/w3images/map.jpg' className='w3-image w3-greyscale-min'  />
 
 <footer className='container-fluid text-center'>
   <a href='#myPage' title='To Top'>
@@ -277,6 +278,9 @@ const Site = props => {
   </a>
   <p>Bootstrap Theme Made By <a href='https://www.w3schools.com' title='Visit w3schools'>www.w3schools.com</a></p>
 </footer>
+
+
+
 
 
 		</div>
