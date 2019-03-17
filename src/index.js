@@ -1,7 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './components/App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+import AppRouters from './routers';
+
+
+import './index.css';
+
+
+render(
+	<Router>
+		<AppRouters />
+	</Router>,
+	 document.getElementById('root')
+);

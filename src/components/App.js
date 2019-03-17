@@ -1,6 +1,6 @@
 // Dependencias
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import PropTypes from 'prop-types';
 
 // Components
 import Header from './Global/Header';
@@ -12,11 +12,16 @@ import items from '../data/menu';
 
 
 class App extends Component {
+	static propTypes = {
+  		children: PropTypes.object.isRequired  		
+  	};
+
   render() {
+  	const { children } = this.props;
     return (
       <div className="App">
         <Header title="Semantic Theme" items={items} />
-        <Content />
+        <Content body={ children } />
         <Footer  />
       </div>
     );
