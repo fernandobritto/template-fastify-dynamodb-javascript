@@ -1,4 +1,5 @@
 
+
 <meta charset="UTF-8">
 <meta name="description" content="Semantic-Stock">
 <meta name="keywords" content="HTML,CSS,JavaScript">
@@ -17,4 +18,3 @@
 <script src="../lib/bootstrap/js/bootstrap.js"></script>
 <script src="../lib/select2/js/select2.js"></script>
 <script src="../js/globais.js"></script>
-
