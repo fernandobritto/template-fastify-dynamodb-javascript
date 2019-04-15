@@ -1,5 +1,4 @@
 
-
 <meta charset="UTF-8">
 <meta name="description" content="Semantic-Stock">
 <meta name="keywords" content="HTML,CSS,JavaScript">
