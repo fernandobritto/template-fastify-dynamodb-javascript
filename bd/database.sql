@@ -1,5 +1,7 @@
 CREATE DATABASE semantic;
 
+USE semantic;
+
 CREATE TABLE usuarios (
 	id INT unique auto_increment NOT NULL,
     nome varchar(100) NOT NULL,
