@@ -1,4 +1,4 @@
-
+// função de validação de formulario
 function validarFormVazio(formulario){
 	dados=$('#' + formulario).serialize();
 	d=dados.split('&');

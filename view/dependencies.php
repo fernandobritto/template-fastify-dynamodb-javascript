@@ -16,5 +16,5 @@
 <script src="../libs/alertifyjs/alertify.js"></script>
 <script src="../libs/bootstrap/js/bootstrap.js"></script>
 <script src="../libs/select2/js/select2.js"></script>
-<!-- <script src="../js/globais.js"></script> -->
+<script src="../js/globais.js"></script>
 
