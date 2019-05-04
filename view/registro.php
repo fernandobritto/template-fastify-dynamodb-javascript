@@ -64,8 +64,23 @@
           alert("Preencha as Campos!");
           return false;
         }
-        
 
+        dados=$('#frmRegistro').serialize();
+        $.ajax({
+          type:"POST",
+          data:datos,
+          url:"SE TIVER PREENCHIDO SERA REDIRECIONADO AKI",
+
+          success:function(r){
+            alert(r);
+
+            if(r==1){
+              alert("Inserido com Sucesso");
+            }else{
+              alert("Erro ao Inserir");              
+            }
+          }
+        });     
       });
 	});	
 </script>	
