@@ -49,40 +49,11 @@
 </form>
 	</div>
 
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="../js/globais.js"></script>
 
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		  $('#registro').click(function(){
 
-        vazios=validarFormVazio('frmRegistro');
-
-        if(vazios > 0){
-          alert("Preencha as Campos!");
-          return false;
-        }
-
-        dados=$('#frmRegistro').serialize();
-        $.ajax({
-          type:"POST",
-          data:datos,
-          url:"../procedures/login/registrarUser.php",
-
-          success:function(r){
-            alert(r);
-
-            if(r==1){
-              alert("Inserido com Sucesso");
-            }else{
-              alert("Erro ao Inserir");              
-            }
-          }
-        });     
-      });
-	});	
-</script>	
 </body>
 </html>
