@@ -16,31 +16,31 @@
 </head>
 <body>
 	<div>
-		<form id="frmRegistro">
+		<form name="form" id="frmRegistro" method="POST" action="../procedures/login/registrarUser.php" onsubmit="return validarFormVazio()">
   <label>
     <p class="label-txt">Nome</p>
-    <input type="text" class="input">
+    <input type="text" class="input" name="nome">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
   <label>
     <p class="label-txt">Usúario</p>
-    <input type="text" class="input">
+    <input type="text" class="input" name="usuario">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
   <label>
     <p class="label-txt">Email</p>
-    <input type="text" class="input">
+    <input type="text" class="input" name="email">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
   <label>
     <p class="label-txt">Senha</p>
-    <input type="text" class="input">
+    <input type="text" class="input" name="senha">
     <div class="line-box">
       <div class="line"></div>
     </div>
