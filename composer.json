@@ -1,0 +1,17 @@
+{
+    "name": "fernandobritto/semantic",
+    "authors": [
+        {
+            "name": "Fernando Britto",
+            "email": "suporte@infoenter.com.br"
+        }
+    ],
+    "require": {
+    	 "ausi/slug-generator": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Code\\": "src/"
+        }
+    }
+}
