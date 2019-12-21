@@ -10,9 +10,13 @@
     <title>Semantic Stock</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
 </head>
 <body>
 <div class="container">
+    @component('navbar')
+    @endcomponent
     <main role="main">
         {{--      Se houver uma sessão nos layouts filhos o Blande ira  mostra-la--}}
         @hasSection('body')
