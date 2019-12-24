@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name', 30);
             $table->integer('stock');
             $table->float('price');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('id_category')->unsigned();
+            $table->foreign('id_category')->references('id')->on('categories');
             $table->timestamps();
         });
     }
