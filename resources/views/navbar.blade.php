@@ -7,15 +7,15 @@
 
     <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li @if($current=="home") class="nav-item active" @else class="nav-item" @endif>
                 <a class="nav-link" href="/">Home </a>
             </li>
 
-            <li class="nav-item">
+            <li @if($current=="products") class="nav-item active" @else class="nav-item" @endif >
                 <a class="nav-link" href="/products">Products </a>
             </li>
 
-            <li class="nav-item">
+            <li @if($current=="categories") class="nav-item active" @else class="nav-item" @endif >
                 <a class="nav-link" href="/categories">Categories </a>
             </li>
         </ul>

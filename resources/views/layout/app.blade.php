@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-    @component('navbar')
+    @component('navbar', ["current" => $current ])
     @endcomponent
     <main role="main">
         {{--      Se houver uma sessão nos layouts filhos o Blande ira  mostra-la--}}
