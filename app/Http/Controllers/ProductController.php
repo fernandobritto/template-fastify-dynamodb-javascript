@@ -39,6 +39,7 @@ class ProductController extends Controller
     {
         $products_store = new Product();
         $products_store->name = $request->input('nameProduct');
+        $products_store->id_category = $request->input('categoryProduct');
         $products_store->save();
 
         return redirect('/products');

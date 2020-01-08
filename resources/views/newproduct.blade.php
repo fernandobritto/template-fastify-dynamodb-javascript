@@ -10,7 +10,11 @@
                 <div class="form-group">
                     <label for="nameProduct">Name</label>
                     <input type="text" class="form-control" name="nameProduct" id="nameProduct" placeholder="Product">
+
+                    <label for="categoryProduct">Category</label>
+                    <input type="text" class="form-control" name="categoryProduct" id="categoryProduct" placeholder="Category">
                 </div>
+
                 <button type="submit" class="btn-primary btn-sm"> Send </button>
                 <button type="cancel" class="btn-danger btn-sm">Cancel</button>
             </form>
