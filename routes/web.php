@@ -12,18 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
-
-//Route::get('/products', 'ProductController@index');
-//Route::get('/products/new', 'ProductController@create');
-//Route::post('/products', 'ProductController@store');
-
-
-Route::get('/categories', 'CategoryController@index');
-Route::get('/categories/new', 'CategoryController@create');
-Route::post('/categories', 'CategoryController@store');
-
-Route::get('/categories/delete/{id}', 'CategoryController@destroy');
-Route::get('/categories/edit/{id}', 'CategoryController@edit');
-Route::post('/categories/{id}', 'CategoryController@update');
