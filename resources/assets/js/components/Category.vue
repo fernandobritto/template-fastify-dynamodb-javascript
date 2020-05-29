@@ -7,7 +7,7 @@
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
         <div class="container-fluid">
-            <!-- Ejemplo de tabla Listado -->
+            <!-- Exemplo - Tabela de listagem -->
             <div class="card">
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Categories
@@ -38,7 +38,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr v-for="category in arrayCategory" :key="category.id">
                             <td>
                                 <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
                                     <i class="icon-pencil"></i>
@@ -47,70 +47,15 @@
                                     <i class="icon-trash"></i>
                                 </button>
                             </td>
-                            <td>Teams</td>
-                            <td>Electronics devices</td>
+                            <td v-text="category.name"></td>
+                            <td v-text="category.description"></td>
                             <td>
-                                <span class="badge badge-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-                                    <i class="icon-pencil"></i>
-                                </button> &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-                                    <i class="icon-trash"></i>
-                                </button>
-                            </td>
-                            <td>Teams</td>
-                            <td>Electronics devices</td>
-                            <td>
-                                <span class="badge badge-success">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-                                    <i class="icon-pencil"></i>
-                                </button> &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-                                    <i class="icon-trash"></i>
-                                </button>
-                            </td>
-                            <td>Teams</td>
-                            <td>Electronics devices</td>
-                            <td>
-                                <span class="badge badge-secondary">Inactive</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-                                    <i class="icon-pencil"></i>
-                                </button> &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-                                    <i class="icon-trash"></i>
-                                </button>
-                            </td>
-                            <td>Teams</td>
-                            <td>Electronics devices</td>
-                            <td>
-                                <span class="badge badge-secondary">Inactive</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNuevo">
-                                    <i class="icon-pencil"></i>
-                                </button>&nbsp;
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalEliminar">
-                                    <i class="icon-trash"></i>
-                                </button>
-                            </td>
-                            <td>Teams</td>
-                            <td>Electronics devices</td>
-                            <td>
-                                <span class="badge badge-success">Active</span>
+                                <div v-if="category.condition">
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                                <div v-else>
+                                    <span class="badge badge-danger">Disabled</span>
+                                </div>
                             </td>
                         </tr>
                         </tbody>
@@ -189,7 +134,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Estas seguro de eliminar la categoría?</p>
+                        <p>Are you sure to delete the category?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -207,8 +152,88 @@
 
 <script>
     export default {
+        data(){
+            return {
+                name : '',
+                description : '',
+                arrayCategory : [],
+                modal : 0,
+                titleModal : '',
+                typoAction : 0,
+                errorCategory : 0,
+                errorShowMsnCategory : []
+            }
+        },
+        methods : {
+            listCategory (){
+                let me=this;
+                axios.get('/category').then(function (response) {
+                    me.arrayCategoria = response.data;
+                })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            // registerCategory(){
+            //     if (this.validarCategoria()){
+            //         return;
+            //     }
+            //
+            //     let me = this;
+            //
+            //     axios.post('/categoria/registrar',{
+            //         'nombre': this.nombre,
+            //         'descripcion': this.descripcion
+            //     }).then(function (response) {
+            //         me.cerrarModal();
+            //         me.listarCategoria();
+            //     }).catch(function (error) {
+            //         console.log(error);
+            //     });
+            // },
+            // validarCategoria(){
+            //     this.errorCategoria=0;
+            //     this.errorMostrarMsjCategoria =[];
+            //
+            //     if (!this.nombre) this.errorMostrarMsjCategoria.push("El nombre de la categoría no puede estar vacío.");
+            //
+            //     if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
+            //
+            //     return this.errorCategoria;
+            // },
+            // cerrarModal(){
+            //     this.modal=0;
+            //     this.tituloModal='';
+            //     this.nombre='';
+            //     this.descripcion='';
+            // },
+            // abrirModal(modelo, accion, data = []){
+            //     switch(modelo){
+            //         case "categoria":
+            //         {
+            //             switch(accion){
+            //                 case 'registrar':
+            //                 {
+            //                     this.modal = 1;
+            //                     this.tituloModal = 'Registrar Categoría';
+            //                     this.nombre= '';
+            //                     this.descripcion = '';
+            //                     this.tipoAccion = 1;
+            //                     break;
+            //                 }
+            //                 case 'actualizar':
+            //                 {
+            //
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+        },
+
+
         mounted() {
-            console.log('Component mounted.')
+            this.listCategory();
         }
     }
 </script>

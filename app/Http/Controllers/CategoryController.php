@@ -11,7 +11,6 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         //if (!$request->ajax()) return redirect('/');
-
         $categories = Category::all();
         return $categories;
     }
@@ -20,48 +19,47 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        if (!$request->ajax()) return redirect('/');
+        //if (!$request->ajax()) return redirect('/');
 
-        $catgory = new Category();
-        $catgory->name = $request->name;
-        $catgory->description = $request->description;
-        $catgory->condition = '1';
-        $catgory->save();
+        $category = new Category();
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->condition = '1';
+        $category->save();
     }
 
 
 
     public function update(Request $request)
     {
-        if (!$request->ajax()) return redirect('/');
-
-        $catgory = Category::findOrFail($request->id);
-        $catgory->name = $request->name;
-        $catgory->description = $request->description;
-        $catgory->condition = '1';
-        $catgory->save();
+        //if (!$request->ajax()) return redirect('/');
+        $category = Category::findOrFail($request->id);
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->condition = '1';
+        $category->save();
     }
 
 
 
     public function disable(Request $request)
     {
-        if (!$request->ajax()) return redirect('/');
+        //if (!$request->ajax()) return redirect('/');
 
-        $catgory = Category::findOrFail($request->id);
-        $catgoria->condicion = '0';
-        $catgoria->save();
+        $category = Category::findOrFail($request->id);
+        $category->condicion = '0';
+        $category->save();
     }
 
 
 
     public function enable(Request $request)
     {
-        if (!$request->ajax()) return redirect('/');
+        //if (!$request->ajax()) return redirect('/');
 
-        $catgoria = Category::findOrFail($request->id);
-        $catgoria->condicion = '1';
-        $catgoria->save();
+        $category = Category::findOrFail($request->id);
+        $category->condicion = '1';
+        $category->save();
     }
 
 
