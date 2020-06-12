@@ -8,6 +8,7 @@
     <meta name="description" content="Sistema de gestión y control de ventas e inventario - Semantic Stock">
     <meta name="author" content="Fernando Britto">
     <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Semantic Stock</title>
 
@@ -16,6 +17,7 @@
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<div id="app">
 <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -69,87 +71,14 @@
 </header>
 
 <div class="app-body">
-    <div class="sidebar">
-        <nav class="sidebar-nav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="icon-speedometer"></i> Escritorio</a>
-                </li>
-                <li class="nav-title">
-                    Mantenimiento
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Almacén</a>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-bag"></i> Categorías</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-bag"></i> Artículos</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-wallet"></i> Compras</a>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link" href="i#"><i class="icon-wallet"></i> Ingresos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-notebook"></i> Proveedores</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-basket"></i> Ventas</a>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link" href="i#"><i class="icon-basket-loaded"></i> Ventas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-notebook"></i> Clientes</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Acceso</a>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-user"></i> Usuarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-user-following"></i> Roles</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i> Reportes</a>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Ingresos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Ventas</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="icon-book-open"></i> Ayuda <span class="badge badge-danger">PDF</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="icon-info"></i> Acerca de...<span class="badge badge-info">IT</span></a>
-                </li>
-            </ul>
-        </nav>
-        <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-    </div>
+    @include('template.sidebar')
 
     <!-- Contenido Principal -->
         @yield('contenido')
     <!-- /Fin del contenido principal -->
 </div>
 
-
+</div>
 
 <footer class="app-footer">
     <span><a href="http://fernandobritto.com.br/">Semantic Stock</a> &copy; 2020</span>
@@ -157,6 +86,7 @@
 </footer>
 
 <!-- Script Principal  -->
+<script src="js/app.js"></script>
 <script src="js/scripts.js"></script>
 
 </body>
