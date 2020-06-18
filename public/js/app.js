@@ -103,7 +103,7 @@ module.exports = __webpack_require__(2);
 
 window.Vue = __webpack_require__(3);
 
-Vue.component('example-component', __webpack_require__(8));
+Vue.component('categoria', __webpack_require__(8));
 
 var app = new Vue({
     el: '#app',
@@ -12569,7 +12569,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/Category.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -12578,9 +12578,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7168fb6a", Component.options)
+    hotAPI.createRecord("data-v-02ec8735", Component.options)
   } else {
-    hotAPI.reload("data-v-7168fb6a", Component.options)
+    hotAPI.reload("data-v-02ec8735", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -12914,6 +12914,84 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            nombre: '',
+            descripcion: '',
+            arrayCategoria: [],
+            modal: 0,
+            tituloModal: '',
+            tipoAccion: 0,
+            errorCategoria: 0,
+            errorMostrarMsjCategoria: []
+        };
+    },
+
+    methods: {
+        listarCategoria: function listarCategoria() {
+            var me = this;
+            axios.get('/categoria').then(function (response) {
+                me.arrayCategoria = response.data;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        registrarCategoria: function registrarCategoria() {
+            if (this.validarCategoria()) {
+                return;
+            }
+
+            var me = this;
+
+            axios.post('/categoria/registrar', {
+                'nombre': this.nombre,
+                'descripcion': this.descripcion
+            }).then(function (response) {
+                me.cerrarModal();
+                me.listarCategoria();
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        validarCategoria: function validarCategoria() {
+            this.errorCategoria = 0;
+            this.errorMostrarMsjCategoria = [];
+
+            if (!this.nombre) this.errorMostrarMsjCategoria.push("El nombre de la categoría no puede estar vacío.");
+
+            if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
+
+            return this.errorCategoria;
+        },
+        cerrarModal: function cerrarModal() {
+            this.modal = 0;
+            this.tituloModal = '';
+            this.nombre = '';
+            this.descripcion = '';
+        },
+        abrirModal: function abrirModal(modelo, accion) {
+            var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+            switch (modelo) {
+                case "categoria":
+                    {
+                        switch (accion) {
+                            case 'registrar':
+                                {
+                                    this.modal = 1;
+                                    this.tituloModal = 'Registrar Categoría';
+                                    this.nombre = '';
+                                    this.descripcion = '';
+                                    this.tipoAccion = 1;
+                                    break;
+                                }
+                            case 'actualizar':
+                                {}
+                        }
+                    }
+            }
+        }
+    },
     mounted: function mounted() {
         console.log('Component mounted.');
     }
@@ -13494,7 +13572,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-02ec8735", module.exports)
   }
 }
 

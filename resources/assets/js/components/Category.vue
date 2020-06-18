@@ -207,6 +207,84 @@
 
 <script>
     export default {
+        data (){
+            return {
+                nombre : '',
+                descripcion : '',
+                arrayCategoria : [],
+                modal : 0,
+                tituloModal : '',
+                tipoAccion : 0,
+                errorCategoria : 0,
+                errorMostrarMsjCategoria : []
+            }
+        },
+        methods : {
+            listarCategoria (){
+                let me=this;
+                axios.get('/categoria').then(function (response) {
+                    me.arrayCategoria = response.data;
+                })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            registrarCategoria(){
+                if (this.validarCategoria()){
+                    return;
+                }
+
+                let me = this;
+
+                axios.post('/categoria/registrar',{
+                    'nombre': this.nombre,
+                    'descripcion': this.descripcion
+                }).then(function (response) {
+                    me.cerrarModal();
+                    me.listarCategoria();
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            },
+            validarCategoria(){
+                this.errorCategoria=0;
+                this.errorMostrarMsjCategoria =[];
+
+                if (!this.nombre) this.errorMostrarMsjCategoria.push("El nombre de la categoría no puede estar vacío.");
+
+                if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
+
+                return this.errorCategoria;
+            },
+            cerrarModal(){
+                this.modal=0;
+                this.tituloModal='';
+                this.nombre='';
+                this.descripcion='';
+            },
+            abrirModal(modelo, accion, data = []){
+                switch(modelo){
+                    case "categoria":
+                    {
+                        switch(accion){
+                            case 'registrar':
+                            {
+                                this.modal = 1;
+                                this.tituloModal = 'Registrar Categoría';
+                                this.nombre= '';
+                                this.descripcion = '';
+                                this.tipoAccion = 1;
+                                break;
+                            }
+                            case 'actualizar':
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
