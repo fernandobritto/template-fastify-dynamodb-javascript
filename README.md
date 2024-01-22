@@ -1,4 +1,3 @@
-# Semantic Stock
+# template-fastify-dynamodb-typescript.git
 
-> Sistema de gestión y control de ventas e inventario 
-
+>
