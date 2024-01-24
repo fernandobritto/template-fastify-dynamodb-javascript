@@ -1,0 +1,10 @@
+{
+  "env": {
+    "NODE_ENV": "development",
+    "DEBUG": "customer:*"
+  },
+  "watch": ["src"],
+  "ext": ".js",
+  "ignore": [],
+  "exec": "node ./src/index.js"
+}

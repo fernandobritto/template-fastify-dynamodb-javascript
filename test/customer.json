@@ -1,0 +1,27 @@
+{
+  "documentNumber": "03241069044",
+  "businessUnit": "INFOENTER",
+  "email": "jane@gb.tech",
+  "givenName": "Jane",
+  "familyName": "Doe",
+  "nickName": "jd",
+  "documentType": "CPF",
+  "gender": "Não Binario",
+  "birthDate": "1990-11-25",
+  "active": true,
+  "address": {
+    "streetAddress": "Avenida Nove de Julho",
+    "number": "1196",
+    "district": "Culturama",
+    "complement": "51a",
+    "postalCode": "79702970",
+    "addressLocality": "Fátima do Sul",
+    "addressRegion": "MS",
+    "localityCode": 3550308,
+    "addressType": "BUSINESS",
+    "geolocation": {
+      "latitude": "-22.3762799",
+      "longitude": "-54.515334"
+    }
+  }
+}
