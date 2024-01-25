@@ -1,0 +1,12 @@
+{
+  "TableName": "infoenter",
+  "AttributeDefinitions": [
+    { "AttributeName": "businessUnit", "AttributeType": "S" },
+    { "AttributeName": "documentNumber", "AttributeType": "S" }
+  ],
+  "KeySchema": [
+    { "AttributeName": "businessUnit", "KeyType": "HASH" },
+    { "AttributeName": "documentNumber", "KeyType": "RANGE" }
+  ],
+  "ProvisionedThroughput": { "ReadCapacityUnits": 5, "WriteCapacityUnits": 5 }
+}

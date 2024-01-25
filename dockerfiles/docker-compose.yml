@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  infoenter:
+    container_name: infoenter
+    build:
+      context: ../
+      dockerfile: dockerfiles/Dockerfile
+    ports:
+      - "8080:3000"
+    depends_on:
+      - "dynamodb"
+    environment:
+      AWS_ACCESS_KEY_ID: xxxxx
+      AWS_SECRET_ACCESS_KEY: xxxxx
+      DYNAMODB_REGION: sa-east-1
+      DYNAMODB_ENDPOINT: http://dynamodb-local:8000
+  dynamodb:
+    container_name: dynamodb-local
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
